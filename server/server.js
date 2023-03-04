@@ -3,11 +3,10 @@ import * as dotenv from 'dotenv';
 import cors from 'cors';
 import { Configuration, OpenAIApi } from 'openai';
 
-dotenv.config({ path: "/etc/secrets/.env" });
+dotenv.config();
 
 
 const configuration = new Configuration({
-    organization: "org-Dnot4KgfMsbGUqewnIhi0gMG",
     apiKey: process.env.OPENAI_API_KEY
 })
 
@@ -20,9 +19,9 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', async (req, res) => {
-    // res.status(200).send({
-    //     message: 'Hello from CodeX'
-    // })
+    res.status(200).send({
+        message: 'Hello from CodeX'
+    })
 });
 
 
